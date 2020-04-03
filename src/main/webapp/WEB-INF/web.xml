@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4"
+         xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+        http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+  </welcome-file-list>
+
+
+
+
+  <!-- 1、通过错误码来配置error-page。当系统发生×××错误时，跳转到错误处理页面。 -->
+  <error-page>
+    <error-code>404</error-code>
+    <location>/NotFound.jsp</location>
+  </error-page>
+  <!-- 2、通过异常的类型配置error-page。当系统发生java.lang.NullException（即空指针异常）时，跳转到错误处理页面。 -->
+  <error-page>
+    <exception-type>java.lang.NullPointerException</exception-type>
+    <location>/error.jsp</location>
+  </error-page>
+</web-app>
